@@ -1,0 +1,2 @@
+# Linuxjournal
+My linux journey
