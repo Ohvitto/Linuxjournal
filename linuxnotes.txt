@@ -1,4 +1,6 @@
-Linux & Python Learning Journal - Days 1 to 16
+1st July 2026
+
+Linux & Python Learning Journal
 Day 1 - Linux Basics
 Commands Learned
 
