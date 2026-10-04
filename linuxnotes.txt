@@ -1,0 +1,921 @@
+Linux & Python Learning Journal - Days 1 to 16
+Day 1 - Linux Basics
+Commands Learned
+
+    pwd - shows the current directory
+    ls - lists files and folders
+    ls -la - lists files with details, including hidden files
+    cd - changes directory
+    cd .. - moves up one directory
+    cd ~ - goes to the home directory
+    mkdir - creates a folder
+    touch - creates an empty file
+
+Main Thing Learned
+I learned how to move around the Linux terminal, check where I am, list files, create folders, and create empty files.
+Day 2 - Files and Text
+Commands Learned
+
+    nano - opens a file editor in the terminal
+    cat - displays the contents of a file
+    rmdir - deletes an empty folder
+    rm -r - deletes a folder and its contents
+    rm - deletes a file
+    echo - prints text to the terminal
+    > - writes output to a file and overwrites it
+    >> - appends output to the end of a file
+
+Main Thing Learned
+I learned how to create, edit, read, and delete files and folders, and how to write text into files using echo.
+Day 3 - First Python Program
+Commands / Code Learned
+
+    python3 --version - checks Python version
+    nano hello.py - creates/edits a Python file
+    python3 hello.py - runs a Python program
+
+print("Hello World")
+
+Main Thing Learned
+I created and ran my first Python program.
+Day 4 - Python Input and Decisions
+Python Learned
+
+    print() - displays output
+    input() - gets user input
+    variables - store information
+    if - makes a decision
+    else - handles the other result
+    == - checks if two things are equal
+
+Challenge Completed
+I made a quiz program that asked my name, asked 2 + 2, and printed either correct! or Try again!.
+Main Thing Learned
+I learned how to make a Python program interact with the user and make decisions.
+Day 5 - Searching and Finding
+Commands Learned
+
+    grep - searches for text inside files
+    grep -i - searches while ignoring uppercase/lowercase
+    find - searches for files
+    history - shows previous commands
+    man - opens manual/help pages
+    ls -a - shows hidden files
+    Tab completion - completes file/folder names quickly
+
+Main Thing Learned
+I learned how to search inside files, find files, view command history, use manuals, and see hidden files.
+Day 6 - Pipes and Command Chaining
+Commands Learned
+
+    | - pipe, sends output from one command into another
+    wc -l - counts lines
+    wc -w - counts words
+    wc -c - counts characters
+
+Challenges Completed
+
+history | grep python
+history | grep nano
+ls | wc -l
+find . -name "*.txt" | wc -l
+find . -name "*.py" | wc -l
+cat games.txt | grep Minecraft
+history | grep python > python_history.txt
+
+Main Thing Learned
+I learned that Linux commands can be combined together using pipes to create more powerful commands.
+Day 7 - Permissions
+Commands Learned
+
+    ls -l - shows file permissions
+    chmod -w file.txt - removes write permission
+    chmod +w file.txt - adds write permission
+    chmod +x file.sh - makes a script executable
+
+Concepts Learned
+
+    r = read
+    w = write
+    x = execute
+    File permissions control who can read, write, or run a file
+
+Main Thing Learned
+I learned how Linux file permissions work and how to make a file executable.
+Day 8 - Processes and mv
+Commands Learned
+
+    ps - shows running processes
+    ps aux - shows all running processes
+    top - shows live system/process usage
+    htop - nicer version of top
+    sleep 300 - creates a process that waits
+    kill PID - stops a process
+    mv - moves or renames files
+
+mv Examples
+
+mv oldname.txt newname.txt
+mv file.txt Folder/
+mv file.txt ..
+mv Folder/file.txt .
+
+Main Thing Learned
+I learned that running programs are called processes, how to view and stop them, and how to move or rename files using mv.
+Day 9 - Archives and Compression
+Commands Learned
+
+    zip archive.zip *.txt - creates a ZIP file containing all .txt files
+    unzip -l archive.zip - views ZIP contents
+    unzip archive.zip -d Folder - extracts ZIP into a folder
+    tar -cvf project.tar *.txt - creates a TAR archive
+    tar -tvf project.tar - views TAR contents
+    tar -xvf project.tar -C Folder - extracts TAR into a folder
+
+Main Thing Learned
+I learned how to create, inspect, and extract ZIP and TAR archives.
+Day 10 - Networking Basics
+Commands Learned
+
+    hostname - shows computer name
+    hostname -I - shows local IP address
+    ip addr - shows network interface details
+    ip -br addr - shows network interfaces in a cleaner way
+    ping google.com - tests connection to a server
+    ping -c 4 google.com - sends only 4 pings
+    curl example.com - requests data from a website
+    wget URL - downloads a file
+    ip route - shows network routes/default gateway
+
+Main Thing Learned
+I learned how to check my IP address, test internet connection, view network routes, and download files from the terminal.
+Day 11 - Environment Variables
+Commands Learned
+
+    echo $HOME - shows home directory
+    echo $USER - shows username
+    echo $SHELL - shows current shell
+    echo $PATH - shows where Linux searches for commands
+    printenv - shows environment variables
+    printenv | grep HOME - searches environment variables
+    which command - shows where a command is stored
+    MYGAME="Minecraft" - creates a temporary variable
+
+Extra Learned
+
+ls foldername
+
+This lets me look inside a folder without going into it.
+Main Thing Learned
+I learned that Linux stores useful system information in environment variables, and $PATH helps Linux find commands.
+Day 12 - Terminal Shortcuts
+Commands / Shortcuts Learned
+
+    clear - clears the terminal
+    Ctrl + L - clears the terminal
+    Up Arrow - brings back previous commands
+    Ctrl + R - searches command history
+    Ctrl + A - moves to the start of the command line
+    Ctrl + E - moves to the end of the command line
+    Ctrl + U - deletes before the cursor
+    Ctrl + K - deletes after the cursor
+    Ctrl + W - deletes the word before the cursor
+    Ctrl + C - stops a running command
+    Ctrl + Z - pauses a running command
+    fg - resumes a paused command
+
+Main Thing Learned
+I learned shortcuts that make me faster in the terminal and how to stop, pause, and resume commands.
+Day 13 - Users and Sudo
+Commands Learned
+
+    whoami - shows current username
+    id - shows user ID, group ID, and groups
+    groups - shows groups the user belongs to
+    sudo - runs commands as administrator
+    sudo -l - shows what sudo commands I can run
+
+Concepts Learned
+
+    My username is Victor
+    Being in the sudo group means I can run administrator commands
+    sudo means superuser do
+    Installing software needs sudo because it changes important system files
+
+Main Thing Learned
+I learned the difference between normal user permissions and administrator/root permissions.
+Day 14 - Package Management
+Commands Learned
+
+    sudo apt update - updates the package list
+    sudo apt upgrade - upgrades installed packages
+    sudo apt install package - installs software
+    apt search package - searches for software
+    apt show package - shows package information
+    sudo apt remove package - removes software
+    sudo apt autoremove - removes unused packages
+    which command - checks where a program is installed
+    tree - shows folders/files in a tree structure
+    tree -L 2 - shows only 2 levels deep
+
+Main Thing Learned
+I learned how Ubuntu installs, updates, searches, and removes software using apt.
+Day 15 - Disk Space and File Sizes
+Commands Learned
+
+    df -h - shows disk/storage space
+    du -h file/folder - shows file/folder size
+    du -sh folder - shows a simple total folder size
+    du -sh * - shows the size of everything in the current directory
+    sort -h - sorts human-readable sizes
+
+Example
+
+du -sh * | sort -h
+
+Main Thing Learned
+I learned how to check how much storage my Linux system has, how much is used, how much is free, and which files/folders are taking space.
+Day 16 - Viewing Files Like a Pro
+Commands Learned
+
+    cat file.txt - shows the whole file
+    less file.txt - opens a file so I can scroll through it
+    head file.txt - shows the first 10 lines
+    head -n 5 file.txt - shows the first 5 lines
+    tail file.txt - shows the last 10 lines
+    tail -n 5 file.txt - shows the last 5 lines
+
+Less Shortcuts
+
+    Arrow keys - scroll
+    Space - next page
+    /word - search inside the file
+    n - next search result
+    q - quit
+
+Challenge Completed
+
+history > commands.txt
+cat commands.txt
+less commands.txt
+head commands.txt
+head -n 5 commands.txt
+tail commands.txt
+tail -n 5 commands.txt
+
+Main Thing Learned
+I learned how to inspect files properly using cat, less, head, and tail.
+
+Day 17 - Linux Text Processing
+Commands Learned
+sort
+Sorts lines into order.
+
+sort names.txt
+
+Save sorted output into a new file:
+
+sort names.txt > sorted_names.txt
+
+uniq
+Removes repeated neighbouring lines.
+
+uniq names.txt
+
+Best used with sort:
+
+sort names.txt | uniq
+
+uniq -c
+Counts how many times each item appears.
+
+sort names.txt | uniq -c
+
+cut
+Extracts parts of each line.
+
+cut -d ":" -f 1 users.txt
+
+    -d ":" = use : as the separator
+    -f 1 = show field 1
+
+Examples:
+
+cut -d ":" -f 1 users.txt
+cut -d ":" -f 2 users.txt
+cut -d ":" -f 3 users.txt
+
+Challenges Completed
+
+    Created names.txt.
+    Sorted names alphabetically.
+    Saved sorted names into sorted_names.txt.
+    Removed duplicate names using:
+
+sort names.txt | uniq
+
+    Counted duplicate names using:
+
+sort names.txt | uniq -c
+
+    Created users.txt using : as a separator.
+    Used cut to extract usernames, ages, and topics.
+    Combined cut with sort:
+
+cut -d ":" -f 3 users.txt | sort
+
+Main Thing I Learned
+I learned how to process and organise text using sort, uniq, and cut, which is useful for analysing lists, logs, command output, and cybersecurity data.
+
+Day 18 - Linux Redirection
+Commands / Symbols Learned
+>
+Overwrites a file with command output.
+
+echo "Minecraft" > games.txt
+ls > files.txt
+
+>>
+Appends output to the end of a file.
+
+echo "Roblox" >> games.txt
+
+<
+Uses a file as input for a command.
+
+sort < names.txt
+
+2>
+Saves error messages into a file.
+
+ls fakefolder 2> errors.txt
+
+&>
+Saves normal output and errors into one file.
+
+ls games.txt fakefolder &> all_output.txt
+
+Challenges Completed
+
+    Created/overwrote a file using >.
+    Added more text to a file using >>.
+    Saved the output of ls into files.txt.
+    Used sort < names.txt to read input from a file.
+    Created an error using a fake folder.
+    Saved the error into errors.txt using 2>.
+    Saved normal output and errors separately:
+
+ls games.txt fakefolder > output.txt 2> errors.txt
+
+    Saved normal output and errors together:
+
+ls games.txt fakefolder &> all_output.txt
+
+Main Thing I Learned
+I learned how Linux handles input, normal output, and error output, and how to redirect them into files.
+
+Day 19 - Bash Scripting
+Commands / Concepts Learned
+Bash script
+A Bash script is a file that contains Linux commands and runs them automatically.
+.sh
+Shell script files usually end with .sh.
+Example:
+
+hello.sh
+system_report.sh
+
+./script.sh
+Runs a script from the current directory.
+
+./hello.sh
+
+chmod +x
+Makes a script executable.
+
+chmod +x hello.sh
+
+Shebang
+
+#!/bin/bash
+
+This tells Linux to run the script using Bash.
+Scripts Created
+hello.sh
+
+#!/bin/bash
+
+echo "Hello Victor"
+echo "Today I am learning Bash scripting"
+pwd
+ls
+
+system_report.sh
+
+#!/bin/bash
+
+echo "System Report"
+echo "-------------"
+
+echo "User:"
+whoami
+
+echo "Current folder:"
+pwd
+
+echo "Date:"
+date
+
+echo "Disk space:"
+df -h
+
+echo "Files here:"
+ls
+
+Challenges Completed
+
+    Created my first Bash script.
+    Tried running it with ./hello.sh.
+    Learned that permission may be denied if the file is not executable.
+    Used chmod +x to make the script executable.
+    Added a shebang line: #!/bin/bash.
+    Created a system report script.
+    Ran multiple Linux commands automatically from one file.
+    Saved script output into a file:
+
+./system_report.sh > report.txt
+
+    Read the saved report:
+
+cat report.txt
+
+Main Thing I Learned
+I learned how to put Linux commands into a .sh file and run them automatically as a Bash script.
+
+Day 20 - Bash Variables and User Input
+Commands / Concepts Learned
+Bash variables
+Variables store information inside a script.
+
+name="Victor"
+game="Minecraft"
+
+Use a variable with $:
+
+echo "My name is $name"
+
+Important rule:
+
+name="Victor"
+
+No spaces around =.
+read
+Gets input from the user.
+
+read name
+
+read -p
+Shows a question and stores the answer.
+
+read -p "What is your name? " name
+
+Bash if statement
+Allows a script to make decisions.
+
+if [ "$answer" = "4" ]; then
+    echo "Correct!"
+else
+    echo "Try again!"
+fi
+
+fi ends the if statement.
+Scripts Created
+variables.sh
+Stored my name and favourite game in variables.
+ask_name.sh
+Asked for my name and printed a greeting.
+bash_quiz.sh
+Asked my name, asked a quiz question, and used if/else to check the answer.
+Challenges Completed
+
+    Created Bash variables.
+    Used $variable to print stored information.
+    Used read to get user input.
+    Used read -p to ask a cleaner question.
+    Created an interactive Bash quiz.
+    Used if, else, and fi in a Bash script.
+    Made scripts executable with:
+
+chmod +x script.sh
+
+    Ran scripts with:
+
+./script.sh
+
+Main Thing I Learned
+I learned how to make Bash scripts interactive by using variables, user input, and simple decision-making with if/else.#
+
+ay 20 - Bash Variables and User Input
+Commands / Concepts Learned
+Bash variables
+Variables store information inside a script.
+
+name="Victor"
+game="Minecraft"
+
+Use a variable with $:
+
+echo "My name is $name"
+
+Important rule:
+
+name="Victor"
+
+No spaces around =.
+read
+Gets input from the user.
+
+read name
+
+read -p
+Shows a question and stores the answer.
+
+read -p "What is your name? " name
+
+Bash if statement
+Allows a script to make decisions.
+
+if [ "$answer" = "4" ]; then
+    echo "Correct!"
+else
+    echo "Try again!"
+fi
+
+fi ends the if statement.
+Scripts Created
+variables.sh
+Stored my name and favourite game in variables.
+ask_name.sh
+Asked for my name and printed a greeting.
+bash_quiz.sh
+Asked my name, asked a quiz question, and used if/else to check the answer.
+Challenges Completed
+
+    Created Bash variables.
+    Used $variable to print stored information.
+    Used read to get user input.
+    Used read -p to ask a cleaner question.
+    Created an interactive Bash quiz.
+    Used if, else, and fi in a Bash script.
+    Made scripts executable with:
+
+chmod +x script.sh
+
+    Ran scripts with:
+
+./script.sh
+
+Main Thing I Learned
+I learned how to make Bash scripts interactive by using variables, user input, and simple decision-making with if/else.
+
+Day 22 - Bash Loops
+Commands / Concepts Learned
+for loop
+Repeats commands for each item in a list.
+
+for name in Victor Alex Maria
+do
+    echo "Hello $name"
+done
+
+Loop through numbers
+
+for number in 1 2 3 4 5
+do
+    echo "Number: $number"
+done
+
+Loop through files
+
+for file in *.txt
+do
+    echo "Found text file: $file"
+done
+
+while loop
+Repeats commands while a condition is true.
+
+count=5
+
+while [ $count -gt 0 ]
+do
+    echo "Countdown: $count"
+    count=$((count - 1))
+done
+
+-gt
+Means greater than.
+
+while [ $count -gt 0 ]
+
+Means:
+
+While count is greater than 0
+
+done
+Ends a loop.
+Scripts Created
+
+    loop.sh
+    numbers.sh
+    files_loop.sh
+    countdown.sh
+
+Challenges Completed
+
+    Created a for loop that greeted multiple names.
+    Created a for loop that counted through numbers.
+    Created a loop that found .txt files.
+    Created a while loop countdown.
+    Used chmod +x to make scripts executable.
+    Ran scripts using ./script.sh.
+
+Main Thing I Learned
+I learned how to make Bash scripts repeat tasks automatically using for loops and while loops.
+
+Day 23 - Bash Conditions and Comparisons
+Commands / Concepts Learned
+if, else, fi
+Used to make decisions in Bash scripts.
+
+if [ condition ]; then
+    echo "Do this"
+else
+    echo "Do something else"
+fi
+
+Number Comparisons
+
+-eq
+-ne
+-gt
+-lt
+-ge
+-le
+
+Meanings:
+
+    -eq = equal to
+    -ne = not equal to
+    -gt = greater than
+    -lt = less than
+    -ge = greater than or equal to
+    -le = less than or equal to
+
+Example:
+
+if [ $age -ge 16 ]; then
+    echo "You are 16 or older."
+fi
+
+File Checks
+
+-f
+-d
+-e
+-x
+-r
+-w
+
+Meanings:
+
+    -f = is a regular file
+    -d = is a directory/folder
+    -e = exists
+    -x = is executable
+    -r = is readable
+    -w = is writable
+
+Example:
+
+if [ -f "$filename" ]; then
+    echo "That file exists."
+fi
+
+Scripts Created
+
+    age_check.sh
+    maths_check.sh
+    file_check.sh
+
+Challenges Completed
+
+    Created a script to check if age is 16 or older.
+    Created a maths quiz using -eq.
+    Created a script to check if a file exists.
+    Practised checking numbers with -ge and -eq.
+    Practised checking files and folders with -f, -d, and -x.
+
+Main Thing I Learned
+I learned how to make Bash scripts make smarter decisions by comparing numbers and checking whether files, folders, or executable scripts exist.
+
+
+Day 24
+
+i relearnt and revised some topics:
+
+  GNU nano 8.7.1                                                                                                 weak_spots *                                                                                                         
+mv (notes.txt) =  moves a file one level above the current folder
+grep "victor" notes.txt = searches inside a file and prints out everything related to the text
+top = shows a live cpu, memory and running processing happening on the computer on the terminal
+ls fakefolder 2> errors.txt = redirects the error output into a text file
+$1 = is the first argument, similar to a variable in python 
+-d = checks wheather the given path is a directory
+head -n (number) file.txt = shows the first (number) lines of a text
+
+Day 25 - Quiz Review and Weak Spots
+Commands / Concepts Reviewed
+cd
+Moves me into a folder.
+
+cd Projects
+
+mv
+Moves or renames files/folders.
+Move a file into a folder:
+
+mv notes.txt Projects/
+
+Move a file out of a folder:
+
+mv notes.txt ..
+
+Rename a file:
+
+mv old.txt new.txt
+
+grep
+Searches for text inside a file.
+
+grep "Minecraft" games.txt
+
+find
+Searches for files or folders by name.
+
+find . -name "games.txt"
+find . -name "*.txt"
+
+Key Differences Learned
+
+    cd = move yourself
+    mv = move the file
+    grep = search inside files
+    find = search for file/folder names
+
+Challenges Completed
+
+    Created a practice folder.
+    Created and moved notes.txt.
+    Used ls foldername to check inside a folder without entering it.
+    Used cd to move into a folder.
+    Used mv file.txt .. to move a file out of a folder.
+    Created games.txt using echo.
+    Used grep to search for Minecraft inside games.txt.
+    Used find to locate games.txt.
+    Built this structure:
+
+Day25Practice/
+├── Games/
+│   └── games.txt
+└── Notes/
+
+    Moved games.txt from Games into Notes.
+    Checked the file moved correctly with ls.
+    Used pwd to confirm my current location.
+
+Main Thing I Learned
+I strengthened my understanding of cd vs mv and grep vs find, which were the weak spots from my Linux quiz.
+
+Day 26 - Linux Networking Part 2
+Commands Learned
+ss
+Shows network socket/connection information.
+ss
+ss -tuln
+Shows listening network ports.
+ss -tuln
+Meanings:
+• -t = TCP
+• -u = UDP
+• -l = listening ports
+• -n = show numbers, not names
+dig
+Looks up DNS information for a domain.
+dig google.com
+Short version:
+dig google.com +short
+nslookup
+Another tool for checking DNS information.
+nslookup google.com
+traceroute
+Shows the route/hops your connection takes to reach a website.
+traceroute google.com
+If not installed:
+sudo apt update
+sudo apt install traceroute
+dnsutils
+Package needed for dig and nslookup.
+sudo apt install dnsutils
+Concepts Learned
+• DNS changes website names into IP addresses.
+• dig google.com +short shows IP addresses for Google.
+• traceroute shows the path to a website using hops.
+• Hop 1 is usually the home router.
+• ping checks if a server can be reached and how fast it replies.
+• traceroute shows the route taken to reach the server.
+• ss -tuln shows ports/services listening on the computer.
+Challenges Completed
+• Checked listening network ports with:
+ss -tuln
+• Looked up Google’s IP address with:
+dig google.com +short
+• Used nslookup to check DNS information.
+• Used traceroute to view the route to Google.
+• Compared ping and traceroute.
+• Saved DNS results into a file:
+dig google.com +short > dns_results.txt
+cat dns_results.txt
+Main Thing I Learned
+I learned how to inspect network connections, check DNS records, and trace the route my computer takes to reach a website.
+
+Day 27 - Linux Logs
+
+Commands Learned
+
+journalctl
+
+Views Linux system logs.
+
+journalctl
+
+journalctl -r
+
+Shows newest logs first.
+
+journalctl -r
+
+journalctl --since
+
+Shows logs from a specific time.
+
+journalctl --since today
+journalctl --since "1 hour ago"
+
+journalctl -f
+
+Follows logs live as they happen.
+
+journalctl -f
+
+Stop it with:
+
+Ctrl + C
+
+systemctl --failed
+
+Shows services that failed to start or crashed.
+
+systemctl --failed
+
+journalctl -u
+
+Shows logs for a specific service.
+
+journalctl -u NetworkManager
+journalctl -u NetworkManager --since today
+
+Challenges Completed
+
+• Viewed system logs with journalctl.
+• Viewed newest logs first with journalctl -r.
+• Checked logs from today.
+• Checked logs from the last hour.
+• Followed logs live with journalctl -f.
+• Stopped live logs using Ctrl + C.
+• Checked failed services with systemctl --failed.
+• Checked NetworkManager logs.
+• Saved today’s logs into a file:
+
+journalctl --since today > today_logs.txt
+
+• Opened the saved logs with:
+
+less today_logs.txt
+
+• Searched inside logs using:
+
+/error
+
+Main Thing I Learned
+
+I learned how to view and investigate Linux system logs, which is useful for troubleshooting, cybersecurity, finding errors, and understanding what happened on the system.
