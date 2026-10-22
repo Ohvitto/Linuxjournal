@@ -921,3 +921,70 @@ less today_logs.txt
 Main Thing I Learned
 
 I learned how to view and investigate Linux system logs, which is useful for troubleshooting, cybersecurity, finding errors, and understanding what happened on the system.
+
+# Day 28 - Linux Networking Part 3
+
+## Commands Learned
+
+### `ss` - Network Connections
+Shows network sockets and listening ports.
+
+```bash
+ss -tuln
+ss -tun
+sudo ss -tulpn
+```
+
+Meanings:
+- `-t` = TCP
+- `-u` = UDP
+- `-l` = Listening ports
+- `-n` = Show numerical addresses and ports
+- `-p` = Show processes using sockets
+
+### `curl` - Website Information
+Shows HTTP response headers.
+
+```bash
+curl -I https://example.com
+```
+
+### Other Commands Reviewed
+
+```bash
+hostname -I                # Show local IP addresses
+ip -br addr                # Show network interfaces
+ping -c 4 example.com      # Test connectivity
+ss -tuln > ports.txt       # Save listening ports
+cat ports.txt              # Read saved results
+```
+
+## Networking Concepts
+
+### IP Addresses and Ports
+- IP address = identifies a device or network interface.
+- Port = identifies a network endpoint or service.
+
+### TCP vs UDP
+- TCP = reliable, ordered data delivery.
+- UDP = sends data without guaranteed delivery.
+
+### Common Ports
+- Port 22 = SSH
+- Port 53 = DNS
+- Port 80 = HTTP
+- Port 443 = HTTPS
+- Port 3306 = MySQL
+
+### HTTP Status Codes
+- `200` = OK
+- `301` = Permanent redirect
+- `403` = Forbidden
+- `404` = Not found
+- `500` = Internal server error
+
+## Practical Tasks
+
+- Checked my local IP address.
+- Viewed network interfaces.
+- Ins
