@@ -988,3 +988,101 @@ cat ports.txt              # Read saved results
 - Checked my local IP address.
 - Viewed network interfaces.
 - Ins
+
+# Day 29 - Linux Security: Users, Groups & File Ownership
+
+## Commands Learned
+
+### `ls -l`
+Shows file permissions, owner and group.
+
+```bash
+ls -l
+```
+
+### `whoami`, `id` and `groups`
+Shows user and group information.
+
+```bash
+whoami
+id
+groups
+```
+
+### `chown`
+Changes the owner of a file.
+
+```bash
+sudo chown username filename
+```
+
+### `chgrp`
+Changes the group that owns a file.
+
+```bash
+chgrp groupname filename
+```
+
+### `chmod`
+Changes file permissions using numbers.
+
+```bash
+chmod 644 notes.txt
+chmod 600 private.txt
+chmod 755 script.sh
+```
+
+### `stat`
+Shows detailed file information, including ownership and permissions.
+
+```bash
+stat private.txt
+```
+
+## Permissions Explained
+
+Linux permissions are divided into three categories:
+
+- Owner = person who owns the file
+- Group = users belonging to the file's group
+- Others = everyone else
+
+Permission values:
+
+- `r` = Read = 4
+- `w` = Write = 2
+- `x` = Execute = 1
+
+Common combinations:
+
+- `7` = Read + Write + Execute
+- `6` = Read + Write
+- `5` = Read + Execute
+- `4` = Read only
+- `0` = No permissions
+
+## Common Permission Settings
+
+```text
+chmod 644 = rw-r--r--
+chmod 755 = rwxr-xr-x
+chmod 600 = rw-------
+chmod 700 = rwx------
+```
+
+## Practical Tasks
+
+- Created a security practice folder.
+- Checked my username and group memberships.
+- Inspected file permissions using `ls -l`.
+- Changed file permissions using numerical values.
+- Used `chmod 644` for a publicly readable file.
+- Used `chmod 600` for a private file.
+- Checked file ownership and permissions using `stat`.
+- Learned how `chown` and `chgrp` control ownership.
+
+## Main Thing I Learned
+
+I learned how Linux controls access to files through users, groups, ownership and permissions. I also learned how to calculate numerical permissions using `r=4`, `w=2` and `x=1`.
+
+These skills are important for cybersecurity because incorrect permissions can expose private information or allow unauthorised access to files.
