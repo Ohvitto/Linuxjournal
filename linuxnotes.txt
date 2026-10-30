@@ -1086,3 +1086,101 @@ chmod 700 = rwx------
 I learned how Linux controls access to files through users, groups, ownership and permissions. I also learned how to calculate numerical permissions using `r=4`, `w=2` and `x=1`.
 
 These skills are important for cybersecurity because incorrect permissions can expose private information or allow unauthorised access to files.
+
+# Day 30 - Linux Security: Processes and Services
+
+## Commands Learned
+
+### `ps aux`
+Shows all running processes, including their PID, CPU usage, memory usage and owner.
+
+```bash
+ps aux
+ps aux | grep firefox
+```
+
+### `pgrep`
+Finds running processes by name.
+
+```bash
+pgrep firefox
+pgrep -a firefox
+```
+
+- `-a` = Show PID and full command.
+
+### `kill`
+Stops a running process.
+
+```bash
+kill PID
+kill %1
+```
+
+- `PID` = Process ID.
+- `%1` = Job number 1 in the current shell.
+
+### Background Processes
+Runs a command in the background.
+
+```bash
+sleep 300 &
+jobs -l
+```
+
+- `&` = Run in background.
+- `jobs -l` = Show background jobs and their PIDs.
+
+### `systemctl`
+Checks Linux services.
+
+```bash
+systemctl status NetworkManager
+systemctl --failed
+```
+
+- `status` = Check whether a service is running.
+- `--failed` = Show failed services.
+
+### `journalctl`
+Checks logs for a specific service.
+
+```bash
+journalctl -u NetworkManager --since today
+```
+
+## Concepts Learned
+
+- Process = A program currently running.
+- PID = Unique identification number for a process.
+- Service = A program that runs in the background to support the system.
+- Background job = A command running without occupying the terminal.
+
+### Service States
+
+- `active (running)` = Service is running.
+- `inactive (dead)` = Service is stopped.
+- `failed` = Service encountered a failure.
+- `active (exited)` = Service completed its startup action successfully.
+
+## Practical Tasks
+
+- Viewed running processes using `ps aux`.
+- Searched for processes using `pgrep`.
+- Started a background process with `sleep 300 &`.
+- Viewed background jobs using `jobs -l`.
+- Stopped a test process using `kill`.
+- Checked failed services using `systemctl --failed`.
+- Inspected NetworkManager's status.
+- Saved running processes into a file:
+
+```bash
+ps aux > processes.txt
+head processes.txt
+```
+
+## Main Thing I Learned
+
+I learned how to identify running processes, understand PIDs, manage background jobs, stop processes and investigate Linux services.
+
+These skills are useful for cybersecurity because they help detect unusual processes, investigate suspicious activity and troubleshoot system problems.
